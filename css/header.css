@@ -46,6 +46,7 @@
   cursor: pointer;
   margin-right: auto;
 }
+
 .header__auth {
   display: flex;
   align-items: center;

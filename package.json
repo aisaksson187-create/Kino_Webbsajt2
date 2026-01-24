@@ -2,14 +2,16 @@
   "name": "kino_webbsajt",
   "version": "1.0.0",
   "description": "Uppgiften går ut på att i grupp planera, strukturera och påbörja utvecklingen av en biograf-webbsajt enligt Scrum-metodik.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_OPTIONS=--exeprimental-vm-modules jest",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sass-watch": "sass --watch src/main.scss:css/main.css",
-    "prepare": "husky"
+    "sass-watch": "sass --watch src/sections/main.scss:public/main.css",
+    "prepare": "husky",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,17 +32,22 @@
   "dependencies": {
     "braces": "^3.0.3",
     "chokidar": "^4.0.3",
+    "cross-env": "^10.1.0",
     "detect-libc": "^1.0.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
     "fill-range": "^7.1.1",
     "immutable": "^5.1.4",
     "is-extglob": "^2.1.1",
     "is-glob": "^4.0.3",
     "is-number": "^7.0.0",
+    "jest": "^30.2.0",
     "micromatch": "^4.0.8",
     "node-addon-api": "^7.1.1",
     "picomatch": "^2.3.1",
     "readdirp": "^4.1.2",
     "source-map-js": "^1.2.1",
+    "supertest": "^7.2.2",
     "to-regex-range": "^5.0.1"
   }
 }

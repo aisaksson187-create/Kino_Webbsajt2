@@ -146,6 +146,10 @@ body.light .header__login-btn {
   background: transparent;
   color: #FFFFFF;
 }
+.header__filmer-btn {
+  background: transparent;
+  color: #FFFFFF;
+}
 body.light .header__member-btn {
   background: transparent;
   color: #350000;
