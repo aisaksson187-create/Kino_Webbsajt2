@@ -1,17 +1,15 @@
 
-import { initMemberPage, initMemberButtons } from "./member-page.js";
-import { toggleLogin } from "./login.js";
-import { toggleRegister } from "./register.js";
-import { toggleMenu } from "./menu.js";
-import { closeNotice } from "./notice.js";
-import { toggleTheme } from "./tema.js";
+import { initMemberPage, initMemberButtons } from "./scripts/member-page.js";
+import { toggleLogin } from "./scripts/login.js";
+import { toggleRegister } from "./scripts/register.js";
+import { toggleMenu } from "./scripts/menu.js";
+import { closeNotice } from "./scripts/notice.js";
+import { toggleTheme } from "./scripts/tema.js";
 
-import { fetchMovies } from "./api.js";
-import { renderMovieList } from "./createcard.js";
-import { openTrailer } from "./trailermodal.js";
-import { movieCarousel } from "./carousel.js";
-
-console.log("app.js loaded ✅");
+import { fetchMovies } from "./scripts/api.js";
+import { renderMovieList } from "./scripts/createcard.js";
+import { openTrailer } from "./scripts/trailermodal.js";
+import { movieCarousel } from "./scripts/carousel.js";
 
 function parseDate(dateStr) {
   if (!dateStr) return null;

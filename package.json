@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "sass-watch": "sass --watch src/sections/main.scss:public/main.css",
     "prepare": "husky",
-    "start": "node server.js"
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
