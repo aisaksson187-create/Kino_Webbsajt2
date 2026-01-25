@@ -1,5 +1,3 @@
-console.log("app.js running ✅");
-
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -12,19 +10,18 @@ export const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// statiskt
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/scripts", express.static(path.join(__dirname, "scripts")));
 app.use("/css", express.static(path.join(__dirname, "css")));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
-app.use(express.static(__dirname)); // om du vill kunna nå index.html, main.css etc i roten
+app.use(express.static(__dirname)); 
 
-// startsida
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// SSR: lista
+
 app.get("/movies", async (req, res) => {
   try {
     const movies = await getMovies();
@@ -34,7 +31,7 @@ app.get("/movies", async (req, res) => {
   }
 });
 
-// SSR: detalj
+
 app.get("/movies/:id", async (req, res) => {
   try {
     const movie = await getMovie(req.params.id);
@@ -45,7 +42,6 @@ app.get("/movies/:id", async (req, res) => {
   }
 });
 
-// 404
 app.use((req, res) => {
   res.status(404).type("html").send(`
     <h1>404</h1>

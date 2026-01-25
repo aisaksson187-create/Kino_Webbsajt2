@@ -1,14 +1,20 @@
-function escapeHtml(str = "") {
-  return String(str)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+function escapeHtml(str) {
+
+  if (str === null || str === undefined) str = "";
+
+  str = "" + str;
+
+  str = str.split("&").join("&amp;");
+  str = str.split("<").join("&lt;");
+  str = str.split(">").join("&gt;");
+  str = str.split('"').join("&quot;");
+  str = str.split("'").join("&#039;");
+
+  return str;
 }
 
-export function layout({ title, body }) {
-  const safeTitle = escapeHtml(title);
+function layout(data) {
+  const safeTitle = escapeHtml(data.title);
 
   return `<!doctype html>
 <html lang="sv">
@@ -16,18 +22,16 @@ export function layout({ title, body }) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>${safeTitle}</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/main.css" />
 </head>
 <body>
   <header class="header">
-    <a class="brand" href="/movies">🎬 Filmer</a>
+    <a class="brand" href="/movies">Filmer</a>
   </header>
 
-  <main class="container">
-    ${body}
-  </main>
+  ${data.body}
 </body>
 </html>`;
 }
 
-export { escapeHtml };
+export { layout, escapeHtml };

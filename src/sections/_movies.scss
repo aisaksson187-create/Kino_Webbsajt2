@@ -1,0 +1,48 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 8px 12px 16px 0;
+  text-decoration: underline;
+}
+
+.movies-grid {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.movie-card__link {
+  display: block;
+  text-decoration: none;
+}
+
+.movie-card__title {
+  margin: 0;
+}
+
+.movie__title {
+  margin: 8px 0 12px;
+}
+
+.movie__intro {
+  max-width: 75ch;
+  margin: 0 0 16px;
+}
+
+.movie__poster-wrap {
+  margin: 12px 0 0;
+}
+
+.movie__poster {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
